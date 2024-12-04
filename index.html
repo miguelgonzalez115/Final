@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,61 +8,76 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="profile-container">
-        
-        <div class="profile-header">
-            <div class="profile-image">
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="logo">
                 <img src="profile.jpg" alt="Profile Image">
             </div>
-            <h1 class="section-title">Resume Profile</h1>
-        </div>
-        
-        
-        <div class="profile-section about">
-            <h2 class="section-title">About</h2>
-            <p>Hello, my name is Miguel Gonzalez, I am an international student at Snow College, this is my second year of study. I have programming knowledge
-                 in the languages C, C#, Java, HTML, and a little bit of Phyton. In the future I would like to put to test everything I have learned in a big 
-                 international company and use and take advantage of all the resources I know.</p>
-        </div>
+            <div class="header-text">
+                <h1>Miguel Gonzalez</h1>
+                <h3>International Student & Aspiring Developer</h3>
+            </div>
+        </header>
 
-        
-        <div class="profile-section work-history">
-            <h2 class="section-title">Work History</h2>
-            <ul>
-                <li><strong>Job Title 1</strong> - SuperInflables (digital marketing) (2018-2022)</li>
-                <li><strong>Job Title 2</strong> - GoalBoxes (advertising campaigns) (2021-2022)</li>
-            </ul>
-        </div>
+        <div class="main-content">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <section class="contact-info">
+                    <h2>Contact Info</h2>
+                    <p>miguel_gonzalez_g@hotmail.com</p>
+                    <p>435 314 9218</p>
+                </section>
 
-        
-        <div class="profile-section education">
-            <h2 class="section-title">Education</h2>
-            <ul>
-                <li><strong>Highschool</strong> - Colegio Internacional SEK (2018)</li>
-                <li><strong>Bachelors</strong> - Snow College (2025)</li>
-            </ul>
-        </div>
+                <section class="skills">
+                    <h2>Skills</h2>
+                    <ul>
+                        <li>- C#, HTML, Java</li>
+                        <li>- Visual Studio Code</li>
+                        <li>- Python, C</li>
+                        <li>- Video Editing (Photoshop, Sony Vegas)</li>
+                    </ul>
+                </section>
 
-        
-        <div class="profile-section skills">
-            <h2 class="section-title">Skills/Tools</h2>
-            <p>C#, HTML, C, Java, Python.</p>
-            <p>Microsoft Office tools, video editing as Sony Vegas, Photoshop. </p>
-        </div>
+                <section class="social-links">
+                    <h2>Social Links</h2>
+                    <a href="https://www.linkedin.com/in/miguel-angel-gonz%C3%A1lez-g%C3%B3mez-75a200204/" target="_blank">LinkedIn</a><br>
+                    <a href="https://github.com/miguelgonzalez115" target="_blank">GitHub</a>
+                </section>
+            </aside>
 
-        
-        <div class="profile-section contact-info">
-            <h2 class="section-title">Contact Info</h2>
-            <p>Email: miguel_gonzalez_g@hotmail.com | Phone: 435 314 9218</p>
-        </div>
+            <!-- Main Content -->
+            <main class="content">
+                <section class="about">
+                    <h2>Objective</h2>
+                    <p>Hello, my name is Miguel Gonzalez. I am an international student at Snow College.
+                        I have programming knowledge in a few languajes. In the future, I aspire to apply 
+                        my skills at a large international company like Tesla or Intel.  And utilize the resources I have learned effectively.
+                        I consider myself a person who adapts very easily to any work environment and quite responsible, so I can provide flexibility in any type of project.</p>
+                </section>
 
-        
-        <div class="profile-section social-links">
-            <h2 class="section-title">Social Links</h2>
-            <a href="https://www.linkedin.com/in/miguel-angel-gonz%C3%A1lez-g%C3%B3mez-75a200204/" target="_blank">LinkedIn</a>
-            <a href="https://github.com/miguelgonzalez115" target="_blank">GitHub</a>
+                <section class="education">
+                    <h2>Education</h2>
+                    <ul>
+                        <li><strong>Bachelors</strong> - Snow College (2025)</li>
+                        <li><strong>Highschool</strong> - Colegio Internacional SEK (2018)</li>
+                    </ul>
+                </section>
+
+                <section class="work-history">
+                    <h2>Work History</h2>
+                    <ul>
+                        <li><strong>GoalBoxes</strong> - Ad Campaigns (2021-2022)</li>
+                        <li><strong>SuperInflables</strong> - Digital Marketing (2018-2022)</li>
+                    </ul>
+                </section>
+
+                <section class="explore-more">
+                    <h2>Explore More</h2>
+                    <a href="table.html" class="btn-link">View Dynamic Table</a>
+                </section>
+            </main>
         </div>
     </div>
-    <script src="script.js"></script>
 </body>
 </html>

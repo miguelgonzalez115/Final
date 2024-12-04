@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="table-styles.css"> <!-- Table-specific styles -->
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCW3jszbu7OLlVly6CPSI5a6PTOPnbPxos&callback=initMap" async defer></script>
 </head>
 <body>
     <div class="container">
@@ -38,15 +39,29 @@
                 <h2 id="modal-title">Add/Edit Entry</h2>
                 <label for="modal-name">Name:</label>
                 <input type="text" id="modal-name" class="input-field">
+                <br>
                 <label for="modal-email">Email:</label>
                 <input type="email" id="modal-email" class="input-field">
+                <br>
                 <button id="save-btn" class="btn">Save</button>
+                <br>
+                <br>
                 <button id="cancel-btn" class="btn">Cancel</button>
             </div>
         </div>
 
+        <br>
+        <div class="go-to-map">
+            <a href="map.html" class="btn-link">View Snow College Location</a>
+        </div>
+
         <div id="confirmation" class="confirmation hidden"></div>
+        <br>
+        <div class="back-to-profile">
+            <a href="index.html" class="btn-link">Back to Profile</a>
+        </div>
     </div>
+
     <script src="script.js"></script> 
     <script src="table-script.js"></script>
 </body>
