@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Snow College Location</title>
-    <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="table-styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -15,31 +15,52 @@
     <div class="container">
         <h1 class="section-title">Snow College Location</h1>
         <div id="map" style="height: 400px; width: 100%;"></div>
-
-
+        <br>
+        <div class="controls">
+            <button id="toggle-campus" class="btn">Switch to Richfield Campus</button>
+        </div>
+        <br>
         <div class="back-to-profile">
             <a href="table.html" class="btn-link">Back to Table</a>
         </div>
     </div>
 
-    <script src="script.js"></script> 
+    <script src="script.js"></script>
     <script src="table-script.js"></script>
 
     <script>
-        
+        var map, marker;
+        var campuses = {
+            main: { lat: 39.3618, lng: -111.5830, name: "Snow College - Ephraim, UT" },
+            richfield: { lat: 38.7666, lng: -112.0980, name: "Snow College - Richfield, UT" }
+        };
+        var currentCampus = 'main';
+
         function initMap() {
-            var snowCollege = {lat: 39.3618, lng: -111.5830}; 
-            var map = new google.maps.Map(document.getElementById('map'), {
-                center: snowCollege, 
-                zoom: 15
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: campuses.main,
+                zoom: 16
             });
 
-            var marker = new google.maps.Marker({
-                position: snowCollege,
+            marker = new google.maps.Marker({
+                position: campuses.main,
                 map: map,
-                title: 'Snow College - Ephraim, UT'
+                title: campuses.main.name
             });
         }
+
+        document.getElementById('toggle-campus').addEventListener('click', function () {
+            currentCampus = currentCampus === 'main' ? 'richfield' : 'main';
+            var campus = campuses[currentCampus];
+
+            map.setCenter(campus);
+            marker.setPosition(campus);
+            marker.setTitle(campus.name);
+
+            this.textContent = currentCampus === 'main' 
+                ? 'Switch to Richfield Campus' 
+                : 'Switch to Main Campus';
+        });
     </script>
 </body>
 </html>
