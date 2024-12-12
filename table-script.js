@@ -24,7 +24,9 @@ $(document).ready(function() {
     }
     displayTable(tableData);
 
-    $('#search').on('input', function() {
+    //Busqueda
+
+    $('#search').on('input', function() { 
         const searchTerm = $(this).val().toLowerCase();
         const filteredData = tableData.filter(item => 
             item.name.toLowerCase().includes(searchTerm) || 
@@ -32,6 +34,8 @@ $(document).ready(function() {
         );
         displayTable(filteredData);
     });
+
+//Agregar nuevo espacio
 
     $('#add-entry-btn').click(function() {
         $('#modal').removeClass('hidden');
@@ -52,17 +56,19 @@ $(document).ready(function() {
         $('#save-btn').data('id', id); 
     });
 
+    //Save 
+
     $('#save-btn').click(function() {
         const id = $(this).data('id');
         const name = $('#modal-name').val();
-        const email = $('#modal-email').val();
+        const email = $('#modal-email').val(); 
 
         if (!name || !email) {
             alert('Both fields are required!');
             return;
         }
 
-        if (id) {
+        if (id) { //If Id exist, edit, if not creat a new 1
             const entry = tableData.find(item => item.id === id);
             entry.name = name;
             entry.email = email;
@@ -80,13 +86,15 @@ $(document).ready(function() {
         $('#modal').addClass('hidden');
     });
 
-    $(document).on('click', '.delete-btn', function() {
+    $(document).on('click', '.delete-btn', function() { //remover
         const row = $(this).closest('tr');
         const id = row.data('id');
         tableData = tableData.filter(item => item.id !== id);
         row.remove();
         showConfirmation('success', 'Entry deleted successfully!');
     });
+
+//funciones
 
     function showConfirmation(type, message) {
         const confirmation = $('#confirmation');

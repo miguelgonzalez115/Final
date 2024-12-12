@@ -9,14 +9,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCW3jszbu7OLlVly6CPSI5a6PTOPnbPxos&callback=initMap" async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCW3jszbu7OLlVly6CPSI5a6PTOPnbPxos&callback=initMap" async defer></script> <!-- api -->
 </head>
 <body>
     <div class="container">
         <h1 class="section-title">Snow College Location</h1>
         <div id="map" style="height: 400px; width: 100%;"></div>
         <br>
-        <div class="controls">
+        <div class="controls"> <!-- botones creados -->
             <button id="toggle-campus" class="btn">Switch to Richfield Campus</button>
         </div>
         <br>
@@ -36,7 +36,9 @@
         };
         var currentCampus = 'main';
 
-        function initMap() {
+
+        //calls the api
+        function initMap() { 
             map = new google.maps.Map(document.getElementById('map'), {
                 center: campuses.main,
                 zoom: 16
@@ -48,7 +50,7 @@
                 title: campuses.main.name
             });
         }
-
+        //toggle between each campus
         document.getElementById('toggle-campus').addEventListener('click', function () {
             currentCampus = currentCampus === 'main' ? 'richfield' : 'main';
             var campus = campuses[currentCampus];
